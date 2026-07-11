@@ -1,5 +1,4 @@
-# 🛡️ Agentic AI for Intelligent Vulnerability Triage & Patch Suggestion
-### Hybrid SAST + DAST + Machine Learning + Self-Healing CI/CD Pipeline
+# 🛡️ Agentic AI Pipeline for Automated Vulnerability Detection and Triage 
 
 ---
 
@@ -133,6 +132,33 @@ By leveraging context-aware vectorized features (13-dim representations) and wei
 | Static Only           | Baseline                 | Baseline             | ~0.5    | N/A       |
 | Basic Alert Count     | Moderate                 | Improved             | Good    | 0.50      |
 | **Vectorized & Weighted** | **Maximum**          | **Superior**         | **High**| **0.562** |
+
+*(Detailed metrics and precision-recall graphs are generated in the `BenchmarkJava/visualizations` directory.)*
+
+---
+
+## 👨‍💻 Authors
+- **Arpit Anand** - IIT2023170
+- **Snehal Gupta** - IIT2023169
+- **Ansh Namdeo** - IIT2023141
+ GITScm polling"** is checked.
+5. **Set Credentials & Secrets:** 
+   - Add your GitHub Personal Access Token (PAT) with `Contents: Read and write` access to Jenkins credentials under the ID `github-creds`.
+   - Add `GROQ_API_KEY` to Jenkins Environment Variables (Manage Jenkins → Environment Variables).
+
+---
+
+## 📈 Performance Metrics
+
+By leveraging context-aware vectorized features (13-dim representations) and weighted signal boosting, the system drastically reduces the false positive rate common to standard static analysis.
+
+| Model                 | Accuracy | Precision | Recall | F1-Score | ROC-AUC | Threshold |
+| --------------------- | -------- | --------- | ------ | -------- | ------- | --------- |
+| **Gradient Boosting** | 0.8245   | 0.8492    | 0.9323 | 0.8887   | 0.9106  | 0.364     |
+| **Random Forest**     | 0.8341   | 0.8251    | 0.8909 | 0.8749   | 0.8881  | 0.414     |
+| **SVM (RBF)**         | 0.8003   | 0.8429    | 0.8533 | 0.8480   | 0.8838  | 0.500     |
+
+Gradient Boosting achieved the highest F1-Score (0.8887) and ROC-AUC (0.9106), demonstrating superior overall classification quality. The threshold optimization strategy specifically tuned the models to maximize recall while maintaining high precision.
 
 *(Detailed metrics and precision-recall graphs are generated in the `BenchmarkJava/visualizations` directory.)*
 

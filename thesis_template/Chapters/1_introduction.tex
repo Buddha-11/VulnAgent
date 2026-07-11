@@ -4,14 +4,14 @@
 Modern software systems are large, rapidly evolving, and security-critical.
 Static Application Security Testing (SAST) tools analyse source code without
 executing it and can detect a wide range of security vulnerabilities early in
-the development lifecycle \cite{hegedus2022sca}. Tools such as CodeQL, Semgrep,
+the development lifecycle \cite{habib2022sca}. Tools such as CodeQL, Semgrep,
 and SonarQube have become first-class citizens in DevSecOps workflows, integrated
-directly into CI/CD pipelines to catch vulnerabilities before deployment.
+directly into CI/CD pipelines to catch vulnerabilities before deployment \cite{githubseclab2023codeql}.
 
 Despite their many advantages, SAST tools suffer from a well-documented and
 persistent limitation: they produce a disproportionately large number of
 \emph{false positive alerts}. The ratio of false positive warnings can reach
-30--60\% \cite{hegedus2022sca}. This high false-alarm rate has serious
+30--60\% \cite{habib2022sca}. This high false-alarm rate has serious
 consequences. Developers become overwhelmed and begin to distrust the tools,
 eventually ignoring most warnings or disabling the tools entirely --- a
 phenomenon known as \emph{alert fatigue}. Real vulnerabilities sink to the
@@ -29,7 +29,7 @@ Vulnerability Detection and Triage} with three complementary layers:
 
 \begin{enumerate}
   \item \textbf{Detection layer}: CodeQL SAST analysis on OWASP Benchmark Java
-        test cases, producing SARIF-format results.
+        test cases \cite{owasp2023benchmark}, producing SARIF-format results.
   \item \textbf{Triage layer}: Machine Learning classifiers trained on features
         extracted from SARIF alerts and source code context, classifying each
         alert as a true or false positive and assigning a confidence score.

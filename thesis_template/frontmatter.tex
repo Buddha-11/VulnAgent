@@ -7,50 +7,43 @@
 
 \begin{titlepage}
 \begin{center}
-\begin{spacing}{1.2}
+\vspace*{0.5cm}
 
-{\huge \bfseries \ttitle\par}  % ← Uses thesis title from main.tex
-
-\vspace {5mm}
-\textit{A project report submitted in partial fulfillment of the requirements\\for the award of the degree of} 
-
-\vspace{7mm}
-\textsc{\huge \MakeUppercase{\degreename}}  % ← Uses degree from main.tex
-
-\vspace {3mm}
-% Logo display - no figure environment needed on title page
-\includegraphics[width=5cm]{Figures/IIITA_Logo.jpg}
-\vspace{5mm}
-% ************************************
-\begin{minipage}[t]{0.5\textwidth}
-    \begin{flushleft} \large
-        \textit{By:-} \\%[2mm]
-            \textsc{\studentnamesformatted} % ← Uses student names from main.tex
-    \end{flushleft}
-\end{minipage}
-\begin{minipage}[t]{0.45\textwidth}
-    \begin{flushright} \large
-        \textit{Enrollment No.} \\
-            \textsc{\rollnumbersformatted} % ← Uses roll numbers from main.tex
-    \end{flushright}
-\end{minipage}\\[1cm]
-% *************************************
-
-\textit{Under the Supervision of}\\[2mm]
-\textsc{\Large \supname}\\% ← Uses supervisor name from main.tex
-\vspace{7mm}
-\textit{to the}\\[2mm]
-\textsc{\Large \deptname}\\ % ← Uses department from main.tex
+{\huge \bfseries \ttitle\par}
 
 \vspace{8mm}
-\textsc{\Large \univname} % ← Uses university from main.tex
+\textit{A project report submitted in partial fulfillment of the requirements\\for the award of the degree of}
+
+\vspace{8mm}
+\textsc{\huge \MakeUppercase{\degreename}}
+
+\vspace{6mm}
+\includegraphics[width=5cm]{Figures/IIITA_Logo.png}
+\vspace{8mm}
+
+\begin{tabular}{@{}lr@{}}
+    \textit{By:-} & \textit{Enrollment No.} \\[2mm]
+    \textsc{\studentonename}  & \textsc{\studentoneroll} \\[1mm]
+    \textsc{\studenttwoname}  & \textsc{\studenttworoll} \\[1mm]
+    \textsc{\studentthreename} & \textsc{\studentthreeroll} \\
+\end{tabular}\\[1.2cm]
+
+
+\textit{Under the Supervision of}\\[2mm]
+\textsc{\Large \supname}\\
+\vspace{7mm}
+\textit{to the}\\[2mm]
+\textsc{\Large \deptname}\\
+
+\vspace{8mm}
+\textsc{\Large \univname}
 
 \vspace{5mm}
 \today
 
-\end{spacing}
 \end{center}
 \end{titlepage}
+
 
 
 %----------------------------------------------------------------------------------------
