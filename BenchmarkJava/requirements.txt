@@ -1,0 +1,9 @@
+langgraph
+langchain
+langchain-groq
+groq
+pandas
+joblib
+requests
+scikit-learn
+python-dotenv
