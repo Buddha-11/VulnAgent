@@ -305,7 +305,7 @@ def generate_patch_llm(alert: dict, full_file: bool = False) -> str:
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.1-70b-versatile",
+            model="openai/gpt-oss-120b",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user",   "content": prompt},
