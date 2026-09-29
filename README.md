@@ -10,7 +10,7 @@ It completely automates the security lifecycle by integrating:
 - ✅ **CodeQL** for deep Static Application Security Testing (SAST).
 - ✅ **OWASP ZAP** for Dynamic Application Security Testing (DAST) on deployed applications.
 - ✅ **Machine Learning (Random Forest)** to filter out false positives and score alert confidence using context-aware, 13-dimensional vectorized feature engineering.
-- ✅ **LLM-Based Remediation (Llama-3.3-70b)** for generating precise, context-aware code patches.
+- ✅ **LLM-Based Remediation (Llama-3.1-70b-versatile)** for generating precise, context-aware code patches.
 - ✅ **Validation Loop** that ensures patches compile, deploy, and actually fix the vulnerability.
 - ✅ **Jenkins CI/CD Automation** to trigger in real-time, execute the agentic loop, run health checks, and automatically commit fixes back to the repository.
 
@@ -38,7 +38,7 @@ The pipeline extracts advanced features from the SARIF alerts and source code:
 
 ### 5. LLM Remediation & Agentic Validation Loop
 For each confirmed vulnerability, the agent enters a self-healing loop (up to 3 iterations):
-- **Iter 1 & 2 (Snippet Mode):** The agent sends a ±5-line context window around the vulnerable line to the Groq LLM (Llama-3.3-70b). The LLM returns a precise patch. 
+- **Iter 1 & 2 (Snippet Mode):** The agent sends a ±5-line context window around the vulnerable line to the Groq LLM (Llama-3.1-70b-versatile). The LLM returns a precise patch. 
 - **Compilation Check:** The agent writes the patch and immediately tests it via `mvn clean compile`. If it fails, the patch is auto-reverted and the agent escalates.
 - **Iter 3 (Full-File Escalation):** If snippet patching fails, the agent sends the entire file to the LLM to resolve complex, multi-line structural issues.
 - **Re-Scan Verification:** After a successful compile, the codebase is re-scanned to ensure the vulnerability is genuinely fixed without introducing new flaws.
@@ -63,7 +63,7 @@ graph TD
     
     F --> G{Confidence > 0.562?}
     G -- No --> H[🗑️ Discard False Positive]
-    G -- Yes --> I[🤖 LLM Remediation <br/> Llama-3.3-70b]
+    G -- Yes --> I[🤖 LLM Remediation <br/> Llama-3.1-70b-versatile]
     
     I --> J[⚙️ Compile Patch <br/> mvn clean compile]
     J -- Fails --> K{Escalate to <br/> Full-File Mode?}
@@ -116,7 +116,7 @@ BenchmarkJava/
 
 ### 2. API Keys & Environment Variables
 Configure the following in Jenkins (Manage Jenkins → Environment Variables):
-- `GROQ_API_KEY`: Your API key for Llama-3.3-70b.
+- `GROQ_API_KEY`: Your API key for Llama-3.1-70b-versatile.
 
 ### 3. Dependencies
 Ensure CodeQL, OWASP ZAP, Tomcat, and Maven are installed and available. The Python virtual environment is handled automatically by the Jenkinsfile during the pipeline execution.

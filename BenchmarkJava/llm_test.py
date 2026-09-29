@@ -96,7 +96,7 @@ Java File:
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="llama-3.1-70b-versatile",
             messages=[
                 {"role": "system", "content": "You fix real-world Java security vulnerabilities correctly."},
                 {"role": "user", "content": prompt}
